@@ -8,12 +8,73 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    let chessBoard: [[ChessPiece]] = [
+        [.Rook, .Knight, .Bishop, .King, .Queen, .Bishop, .Knight, .Rook],
+        [.Pawn,.Pawn,.Pawn,.Pawn,.Pawn,.Pawn,.Pawn,.Pawn],
+        [.None,.None,.None,.None,.None,.None,.None,.None],
+        [.None,.None,.None,.None,.None,.None,.None,.None],
+        [.None,.None,.None,.None,.None,.None,.None,.None],
+        [.None,.None,.None,.None,.None,.None,.None,.None],
+        [.Pawn,.Pawn,.Pawn,.Pawn,.Pawn,.Pawn,.Pawn,.Pawn],
+        [.Rook, .Knight, .Bishop, .King, .Queen, .Bishop, .Knight, .Rook]]
+    
+    private let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.backgroundColor = .green
+        cv.register(ChessboardCell.self, forCellWithReuseIdentifier: ChessboardCell.identifier)
+        return cv
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .red
+        
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+        view.addSubview(collectionView)
+        
+        self.collectionView.translatesAutoresizingMaskIntoConstraints = false
+        self.collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        self.collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        self.collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        self.collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
     }
-
-
+    
+    
 }
 
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return chessBoard.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        chessBoard[section].count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChessboardCell.identifier, for: indexPath) as? ChessboardCell else {
+            return UICollectionViewCell()
+        }
+        cell.configureWith(model: ChessboardCellModel(piece: self.chessBoard[indexPath.section][indexPath.row]), indexPath: indexPath)
+        return cell
+    }
+    
+}
+
+
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width / 8, height: collectionView.bounds.height / 8)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        0
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        0
+    }
+}

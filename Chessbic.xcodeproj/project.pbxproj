@@ -10,12 +10,13 @@
 		E89294DC2AA97C35008D7ED9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294DB2AA97C35008D7ED9 /* AppDelegate.swift */; };
 		E89294DE2AA97C35008D7ED9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294DD2AA97C35008D7ED9 /* SceneDelegate.swift */; };
 		E89294E02AA97C35008D7ED9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294DF2AA97C35008D7ED9 /* ViewController.swift */; };
-		E89294E32AA97C35008D7ED9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E89294E12AA97C35008D7ED9 /* Main.storyboard */; };
 		E89294E52AA97C36008D7ED9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89294E42AA97C36008D7ED9 /* Assets.xcassets */; };
 		E89294E82AA97C36008D7ED9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E89294E62AA97C36008D7ED9 /* LaunchScreen.storyboard */; };
 		E89294F32AA97C36008D7ED9 /* ChessbicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294F22AA97C36008D7ED9 /* ChessbicTests.swift */; };
 		E89294FD2AA97C36008D7ED9 /* ChessbicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294FC2AA97C36008D7ED9 /* ChessbicUITests.swift */; };
 		E89294FF2AA97C36008D7ED9 /* ChessbicUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294FE2AA97C36008D7ED9 /* ChessbicUITestsLaunchTests.swift */; };
+		E892950C2AA98189008D7ED9 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892950B2AA98189008D7ED9 /* SwiftUIView.swift */; };
+		E89295102AA98566008D7ED9 /* ChessboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892950F2AA98566008D7ED9 /* ChessboardCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,6 @@
 		E89294DB2AA97C35008D7ED9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E89294DD2AA97C35008D7ED9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E89294DF2AA97C35008D7ED9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E89294E22AA97C35008D7ED9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E89294E42AA97C36008D7ED9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E89294E72AA97C36008D7ED9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E89294E92AA97C36008D7ED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		E89294F82AA97C36008D7ED9 /* ChessbicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChessbicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89294FC2AA97C36008D7ED9 /* ChessbicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessbicUITests.swift; sourceTree = "<group>"; };
 		E89294FE2AA97C36008D7ED9 /* ChessbicUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessbicUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E892950B2AA98189008D7ED9 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		E892950F2AA98566008D7ED9 /* ChessboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessboardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +101,14 @@
 		E89294DA2AA97C35008D7ED9 /* Chessbic */ = {
 			isa = PBXGroup;
 			children = (
+				E892950D2AA98549008D7ED9 /* Views */,
 				E89294DB2AA97C35008D7ED9 /* AppDelegate.swift */,
 				E89294DD2AA97C35008D7ED9 /* SceneDelegate.swift */,
 				E89294DF2AA97C35008D7ED9 /* ViewController.swift */,
-				E89294E12AA97C35008D7ED9 /* Main.storyboard */,
 				E89294E42AA97C36008D7ED9 /* Assets.xcassets */,
 				E89294E62AA97C36008D7ED9 /* LaunchScreen.storyboard */,
 				E89294E92AA97C36008D7ED9 /* Info.plist */,
+				E892950B2AA98189008D7ED9 /* SwiftUIView.swift */,
 			);
 			path = Chessbic;
 			sourceTree = "<group>";
@@ -125,6 +128,14 @@
 				E89294FE2AA97C36008D7ED9 /* ChessbicUITestsLaunchTests.swift */,
 			);
 			path = ChessbicUITests;
+			sourceTree = "<group>";
+		};
+		E892950D2AA98549008D7ED9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E892950F2AA98566008D7ED9 /* ChessboardCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +244,6 @@
 			files = (
 				E89294E82AA97C36008D7ED9 /* LaunchScreen.storyboard in Resources */,
 				E89294E52AA97C36008D7ED9 /* Assets.xcassets in Resources */,
-				E89294E32AA97C35008D7ED9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +270,9 @@
 			files = (
 				E89294E02AA97C35008D7ED9 /* ViewController.swift in Sources */,
 				E89294DC2AA97C35008D7ED9 /* AppDelegate.swift in Sources */,
+				E892950C2AA98189008D7ED9 /* SwiftUIView.swift in Sources */,
 				E89294DE2AA97C35008D7ED9 /* SceneDelegate.swift in Sources */,
+				E89295102AA98566008D7ED9 /* ChessboardCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +309,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E89294E12AA97C35008D7ED9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E89294E22AA97C35008D7ED9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E89294E62AA97C36008D7ED9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -447,7 +451,6 @@
 				INFOPLIST_FILE = Chessbic/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -475,7 +478,6 @@
 				INFOPLIST_FILE = Chessbic/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
