@@ -9,15 +9,7 @@ import Foundation
 import UIKit
 import Observation
 
-enum ChessPiece: String {
-    case Pawn = "P"
-    case Knight = "C"
-    case Bishop = "B"
-    case Rook = "R"
-    case Queen = "Q"
-    case King = "K"
-    case None = ""
-}
+
 
 
 @Observable struct ChessboardCellModel {

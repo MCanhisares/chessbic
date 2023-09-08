@@ -17,6 +17,9 @@
 		E89294FF2AA97C36008D7ED9 /* ChessbicUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294FE2AA97C36008D7ED9 /* ChessbicUITestsLaunchTests.swift */; };
 		E892950C2AA98189008D7ED9 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892950B2AA98189008D7ED9 /* SwiftUIView.swift */; };
 		E89295102AA98566008D7ED9 /* ChessboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892950F2AA98566008D7ED9 /* ChessboardCell.swift */; };
+		E89295132AAA8D04008D7ED9 /* ChessPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295122AAA8D04008D7ED9 /* ChessPiece.swift */; };
+		E89295152AAA9D74008D7ED9 /* ChessPieceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295142AAA9D74008D7ED9 /* ChessPieceTests.swift */; };
+		E89295172AAAA012008D7ED9 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295162AAAA012008D7ED9 /* Coordinate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		E89294FE2AA97C36008D7ED9 /* ChessbicUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessbicUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E892950B2AA98189008D7ED9 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		E892950F2AA98566008D7ED9 /* ChessboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessboardCell.swift; sourceTree = "<group>"; };
+		E89295122AAA8D04008D7ED9 /* ChessPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessPiece.swift; sourceTree = "<group>"; };
+		E89295142AAA9D74008D7ED9 /* ChessPieceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessPieceTests.swift; sourceTree = "<group>"; };
+		E89295162AAAA012008D7ED9 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 		E89294DA2AA97C35008D7ED9 /* Chessbic */ = {
 			isa = PBXGroup;
 			children = (
+				E89295112AAA8CE2008D7ED9 /* Models */,
 				E892950D2AA98549008D7ED9 /* Views */,
 				E89294DB2AA97C35008D7ED9 /* AppDelegate.swift */,
 				E89294DD2AA97C35008D7ED9 /* SceneDelegate.swift */,
@@ -117,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				E89294F22AA97C36008D7ED9 /* ChessbicTests.swift */,
+				E89295142AAA9D74008D7ED9 /* ChessPieceTests.swift */,
 			);
 			path = ChessbicTests;
 			sourceTree = "<group>";
@@ -136,6 +144,15 @@
 				E892950F2AA98566008D7ED9 /* ChessboardCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E89295112AAA8CE2008D7ED9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E89295122AAA8D04008D7ED9 /* ChessPiece.swift */,
+				E89295162AAAA012008D7ED9 /* Coordinate.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,11 +285,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E89295172AAAA012008D7ED9 /* Coordinate.swift in Sources */,
 				E89294E02AA97C35008D7ED9 /* ViewController.swift in Sources */,
 				E89294DC2AA97C35008D7ED9 /* AppDelegate.swift in Sources */,
 				E892950C2AA98189008D7ED9 /* SwiftUIView.swift in Sources */,
 				E89294DE2AA97C35008D7ED9 /* SceneDelegate.swift in Sources */,
 				E89295102AA98566008D7ED9 /* ChessboardCell.swift in Sources */,
+				E89295132AAA8D04008D7ED9 /* ChessPiece.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E89294F32AA97C36008D7ED9 /* ChessbicTests.swift in Sources */,
+				E89295152AAA9D74008D7ED9 /* ChessPieceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
