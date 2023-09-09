@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		E89294DC2AA97C35008D7ED9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294DB2AA97C35008D7ED9 /* AppDelegate.swift */; };
 		E89294DE2AA97C35008D7ED9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294DD2AA97C35008D7ED9 /* SceneDelegate.swift */; };
-		E89294E02AA97C35008D7ED9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294DF2AA97C35008D7ED9 /* ViewController.swift */; };
+		E89294E02AA97C35008D7ED9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294DF2AA97C35008D7ED9 /* GameViewController.swift */; };
 		E89294E52AA97C36008D7ED9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89294E42AA97C36008D7ED9 /* Assets.xcassets */; };
 		E89294E82AA97C36008D7ED9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E89294E62AA97C36008D7ED9 /* LaunchScreen.storyboard */; };
 		E89294F32AA97C36008D7ED9 /* ChessbicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294F22AA97C36008D7ED9 /* ChessbicTests.swift */; };
@@ -20,6 +20,15 @@
 		E89295132AAA8D04008D7ED9 /* ChessPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295122AAA8D04008D7ED9 /* ChessPiece.swift */; };
 		E89295152AAA9D74008D7ED9 /* ChessPieceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295142AAA9D74008D7ED9 /* ChessPieceTests.swift */; };
 		E89295172AAAA012008D7ED9 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295162AAAA012008D7ED9 /* Coordinate.swift */; };
+		E892951B2AAD00B7008D7ED9 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892951A2AAD00B7008D7ED9 /* MainTabViewController.swift */; };
+		E892951E2AAD0622008D7ED9 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892951D2AAD0622008D7ED9 /* AccountViewController.swift */; };
+		E89295212AAD0ED5008D7ED9 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295202AAD0ED5008D7ED9 /* KeychainHelper.swift */; };
+		E89295232AAD0F6B008D7ED9 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295222AAD0F6B008D7ED9 /* AuthenticationService.swift */; };
+		E89295252AAD1142008D7ED9 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295242AAD1142008D7ED9 /* AuthenticationViewController.swift */; };
+		E892952B2AAD166E008D7ED9 /* AuthenticateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892952A2AAD166E008D7ED9 /* AuthenticateView.swift */; };
+		E892952E2AAD18AF008D7ED9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892952D2AAD18AF008D7ED9 /* MenuViewController.swift */; };
+		E89295312AAD1A20008D7ED9 /* SnapKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E89295302AAD1A20008D7ED9 /* SnapKit.xcframework */; };
+		E89295322AAD1A20008D7ED9 /* SnapKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E89295302AAD1A20008D7ED9 /* SnapKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,11 +48,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E89295332AAD1A20008D7ED9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E89295322AAD1A20008D7ED9 /* SnapKit.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		E89294D82AA97C35008D7ED9 /* Chessbic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chessbic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89294DB2AA97C35008D7ED9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E89294DD2AA97C35008D7ED9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E89294DF2AA97C35008D7ED9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E89294DF2AA97C35008D7ED9 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		E89294E42AA97C36008D7ED9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E89294E72AA97C36008D7ED9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E89294E92AA97C36008D7ED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +80,14 @@
 		E89295122AAA8D04008D7ED9 /* ChessPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessPiece.swift; sourceTree = "<group>"; };
 		E89295142AAA9D74008D7ED9 /* ChessPieceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessPieceTests.swift; sourceTree = "<group>"; };
 		E89295162AAAA012008D7ED9 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		E892951A2AAD00B7008D7ED9 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		E892951D2AAD0622008D7ED9 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		E89295202AAD0ED5008D7ED9 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		E89295222AAD0F6B008D7ED9 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		E89295242AAD1142008D7ED9 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		E892952A2AAD166E008D7ED9 /* AuthenticateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateView.swift; sourceTree = "<group>"; };
+		E892952D2AAD18AF008D7ED9 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		E89295302AAD1A20008D7ED9 /* SnapKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SnapKit.xcframework; path = Carthage/Build/SnapKit.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E89295312AAD1A20008D7ED9 /* SnapKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +123,7 @@
 				E89294F12AA97C36008D7ED9 /* ChessbicTests */,
 				E89294FB2AA97C36008D7ED9 /* ChessbicUITests */,
 				E89294D92AA97C35008D7ED9 /* Products */,
+				E892952F2AAD1A20008D7ED9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,11 +140,15 @@
 		E89294DA2AA97C35008D7ED9 /* Chessbic */ = {
 			isa = PBXGroup;
 			children = (
+				E892952C2AAD1894008D7ED9 /* Menu */,
+				E892951F2AAD0EB9008D7ED9 /* Authentication */,
+				E892951C2AAD0600008D7ED9 /* Account */,
+				E89295192AAD009A008D7ED9 /* Navigation */,
+				E89295182AAD0011008D7ED9 /* Game */,
 				E89295112AAA8CE2008D7ED9 /* Models */,
 				E892950D2AA98549008D7ED9 /* Views */,
 				E89294DB2AA97C35008D7ED9 /* AppDelegate.swift */,
 				E89294DD2AA97C35008D7ED9 /* SceneDelegate.swift */,
-				E89294DF2AA97C35008D7ED9 /* ViewController.swift */,
 				E89294E42AA97C36008D7ED9 /* Assets.xcassets */,
 				E89294E62AA97C36008D7ED9 /* LaunchScreen.storyboard */,
 				E89294E92AA97C36008D7ED9 /* Info.plist */,
@@ -141,7 +178,8 @@
 		E892950D2AA98549008D7ED9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E892950F2AA98566008D7ED9 /* ChessboardCell.swift */,
+				E89295272AAD154D008D7ED9 /* Buttons */,
+				E89295262AAD1543008D7ED9 /* CollectionViewCells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -155,6 +193,72 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E89295182AAD0011008D7ED9 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				E89294DF2AA97C35008D7ED9 /* GameViewController.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		E89295192AAD009A008D7ED9 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				E892951A2AAD00B7008D7ED9 /* MainTabViewController.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		E892951C2AAD0600008D7ED9 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				E892951D2AAD0622008D7ED9 /* AccountViewController.swift */,
+				E892952A2AAD166E008D7ED9 /* AuthenticateView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		E892951F2AAD0EB9008D7ED9 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				E89295202AAD0ED5008D7ED9 /* KeychainHelper.swift */,
+				E89295222AAD0F6B008D7ED9 /* AuthenticationService.swift */,
+				E89295242AAD1142008D7ED9 /* AuthenticationViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		E89295262AAD1543008D7ED9 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				E892950F2AA98566008D7ED9 /* ChessboardCell.swift */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		E89295272AAD154D008D7ED9 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		E892952C2AAD1894008D7ED9 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				E892952D2AAD18AF008D7ED9 /* MenuViewController.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		E892952F2AAD1A20008D7ED9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E89295302AAD1A20008D7ED9 /* SnapKit.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,6 +269,7 @@
 				E89294D42AA97C35008D7ED9 /* Sources */,
 				E89294D52AA97C35008D7ED9 /* Frameworks */,
 				E89294D62AA97C35008D7ED9 /* Resources */,
+				E89295332AAD1A20008D7ED9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -285,13 +390,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E892952B2AAD166E008D7ED9 /* AuthenticateView.swift in Sources */,
 				E89295172AAAA012008D7ED9 /* Coordinate.swift in Sources */,
-				E89294E02AA97C35008D7ED9 /* ViewController.swift in Sources */,
+				E892951B2AAD00B7008D7ED9 /* MainTabViewController.swift in Sources */,
+				E892952E2AAD18AF008D7ED9 /* MenuViewController.swift in Sources */,
+				E89294E02AA97C35008D7ED9 /* GameViewController.swift in Sources */,
+				E89295212AAD0ED5008D7ED9 /* KeychainHelper.swift in Sources */,
+				E89295252AAD1142008D7ED9 /* AuthenticationViewController.swift in Sources */,
 				E89294DC2AA97C35008D7ED9 /* AppDelegate.swift in Sources */,
 				E892950C2AA98189008D7ED9 /* SwiftUIView.swift in Sources */,
+				E89295232AAD0F6B008D7ED9 /* AuthenticationService.swift in Sources */,
 				E89294DE2AA97C35008D7ED9 /* SceneDelegate.swift in Sources */,
 				E89295102AA98566008D7ED9 /* ChessboardCell.swift in Sources */,
 				E89295132AAA8D04008D7ED9 /* ChessPiece.swift in Sources */,
+				E892951E2AAD0622008D7ED9 /* AccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

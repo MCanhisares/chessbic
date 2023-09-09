@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GameViewController: UIViewController {
     let chessBoard: [[ChessPiece]] = [
         [.Rook, .Knight, .Bishop, .King, .Queen, .Bishop, .Knight, .Rook],
         [.Pawn,.Pawn,.Pawn,.Pawn,.Pawn,.Pawn,.Pawn,.Pawn],
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension GameViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return chessBoard.count
     }
@@ -54,18 +54,37 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         chessBoard[section].count
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? ChessboardCell else {
+            return
+        }
+        let pathsToHighlight = cell.piece.possibleMovesForPiece(square: Coordinate(from: indexPath))
+        guard let selectedpaths = collectionView.indexPathsForSelectedItems else {
+            return
+        }
+        
+        for p in selectedpaths {
+            collectionView.deselectItem(at: p, animated: false)
+        }
+        for p in pathsToHighlight{
+            collectionView.selectItem(at: p.toIndexPath(), animated: false, scrollPosition: .centeredVertically)
+        }
+        
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChessboardCell.identifier, for: indexPath) as? ChessboardCell else {
             return UICollectionViewCell()
         }
         cell.configureWith(model: ChessboardCellModel(piece: self.chessBoard[indexPath.section][indexPath.row]), indexPath: indexPath)
+        
         return cell
     }
     
 }
 
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension GameViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.width / 8, height: collectionView.bounds.height / 8)

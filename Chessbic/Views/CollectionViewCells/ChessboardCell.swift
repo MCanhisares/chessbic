@@ -18,9 +18,9 @@ import Observation
 
 class ChessboardCell: UICollectionViewCell {
     static let identifier = "ChessboardCell"
-    private var piece: ChessPiece = .Knight
     private var label: UILabel
     private var container: UIView
+    var piece: ChessPiece = .None
     
     required init?(coder: NSCoder) {
         fatalError("Coder not implemented")
@@ -49,6 +49,7 @@ class ChessboardCell: UICollectionViewCell {
         label.centerXAnchor.constraint(equalTo: container.centerXAnchor).isActive = true
         label.centerYAnchor.constraint(equalTo: container.centerYAnchor).isActive = true
     }
+    
     func track() {
         withObservationTracking {
             let _  = self.piece
@@ -64,6 +65,22 @@ class ChessboardCell: UICollectionViewCell {
         let position = indexPath.section + indexPath.item
         self.container.backgroundColor = position % 2 == 0 ? .white : .gray
         self.piece = model.piece
-        self.label.text = model.piece.rawValue
+        self.label.text = model.piece.rawValue        
+    }
+    
+    override var isSelected: Bool {
+        didSet{
+            if self.isSelected {
+                UIView.animate(withDuration: 0.3) { // for animation effect
+                    self.container.backgroundColor = UIColor(red: 115/255, green: 190/255, blue: 170/255, alpha: 1.0)
+                }
+            }
+            else {
+                UIView.animate(withDuration: 0.3) { // for animation effect
+                    self.container.backgroundColor = UIColor(red: 60/255, green: 63/255, blue: 73/255, alpha: 1.0)
+                }
+            }
+        }
     }
 }
+
