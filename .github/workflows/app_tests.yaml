@@ -10,4 +10,4 @@ jobs:
     - name: Select Xcode
       run: sudo xcode-select -switch /Applications/Xcode_14.3.1.app && /usr/bin/xcodebuild -version
     - name: Run tests
-      run: xcodebuild test -scheme Chessbic -project Chessbic.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.4' | xcpretty && exit ${PIPESTATUS[0]}
+      run: xcodebuild test -scheme Chessbic -project Chessbic.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=17.0' | xcpretty && exit ${PIPESTATUS[0]}
