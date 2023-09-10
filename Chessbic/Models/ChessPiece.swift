@@ -47,7 +47,7 @@ extension ChessPiece {
     
     private func getKingMoves(square: Coordinate) -> [Coordinate] {
         var coordinates: [Coordinate] = []
-        var moves = [(0, 1), (0, -1), (1, 0), (-1, 0), (1, 1), (-1, -1), (-1, 1), (1, -1)]
+        let moves = [(0, 1), (0, -1), (1, 0), (-1, 0), (1, 1), (-1, -1), (-1, 1), (1, -1)]
         for move in moves {
             if isValidSquare(x: square.x + move.0, y: square.y + move.1) {
                 coordinates.append(Coordinate(x: square.x + move.0, y: square.y + move.1))
@@ -58,7 +58,7 @@ extension ChessPiece {
     
     private func getKnightMoves(square: Coordinate) -> [Coordinate] {
         var coordinates: [Coordinate] = []
-        var moves = [(-2, 1), (-1, 2), (1, 2), (2, 1), (2, -1), (1, -2), (-1, -2)]
+        let moves = [(-2, 1), (-1, 2), (1, 2), (2, 1), (2, -1), (1, -2), (-1, -2)]
         for move in moves {
             if isValidSquare(x: square.x + move.0, y: square.y + move.1) {
                 coordinates.append(Coordinate(x: square.x + move.0, y: square.y + move.1))

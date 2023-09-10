@@ -17,7 +17,7 @@ import UIKit
 
 
 #Preview {
-    let viewController = ViewController()
+    let viewController = GameViewController()
 
     return viewController
 }
