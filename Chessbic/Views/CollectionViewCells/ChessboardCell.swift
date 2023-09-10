@@ -7,12 +7,8 @@
 
 import Foundation
 import UIKit
-import Observation
 
-
-
-
-@Observable struct ChessboardCellModel {
+struct ChessboardCellModel {
     let piece: ChessPiece
 }
 
@@ -48,17 +44,6 @@ class ChessboardCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.centerXAnchor.constraint(equalTo: container.centerXAnchor).isActive = true
         label.centerYAnchor.constraint(equalTo: container.centerYAnchor).isActive = true
-    }
-    
-    func track() {
-        withObservationTracking {
-            let _  = self.piece
-        } onChange: {
-            Task { @MainActor [weak self] in
-                self?.label.text = self?.piece.rawValue
-            }
-        }
-        
     }
     
     func configureWith(model: ChessboardCellModel, indexPath: IndexPath) {
