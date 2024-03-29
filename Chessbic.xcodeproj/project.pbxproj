@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E869A2B52BB69B760033AACD /* ChessBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E869A2B42BB69B760033AACD /* ChessBoard.swift */; };
+		E869A2B82BB69BDE0033AACD /* UIView+Jiggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E869A2B72BB69BDE0033AACD /* UIView+Jiggle.swift */; };
 		E89294DC2AA97C35008D7ED9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294DB2AA97C35008D7ED9 /* AppDelegate.swift */; };
 		E89294DE2AA97C35008D7ED9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294DD2AA97C35008D7ED9 /* SceneDelegate.swift */; };
 		E89294E02AA97C35008D7ED9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294DF2AA97C35008D7ED9 /* GameViewController.swift */; };
@@ -15,11 +17,9 @@
 		E89294F32AA97C36008D7ED9 /* ChessbicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294F22AA97C36008D7ED9 /* ChessbicTests.swift */; };
 		E89294FD2AA97C36008D7ED9 /* ChessbicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294FC2AA97C36008D7ED9 /* ChessbicUITests.swift */; };
 		E89294FF2AA97C36008D7ED9 /* ChessbicUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294FE2AA97C36008D7ED9 /* ChessbicUITestsLaunchTests.swift */; };
-		E892950C2AA98189008D7ED9 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892950B2AA98189008D7ED9 /* SwiftUIView.swift */; };
-		E89295102AA98566008D7ED9 /* ChessboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892950F2AA98566008D7ED9 /* ChessboardCell.swift */; };
 		E89295132AAA8D04008D7ED9 /* ChessPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295122AAA8D04008D7ED9 /* ChessPiece.swift */; };
 		E89295152AAA9D74008D7ED9 /* ChessPieceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295142AAA9D74008D7ED9 /* ChessPieceTests.swift */; };
-		E89295172AAAA012008D7ED9 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295162AAAA012008D7ED9 /* Coordinate.swift */; };
+		E89295172AAAA012008D7ED9 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295162AAAA012008D7ED9 /* Square.swift */; };
 		E892951B2AAD00B7008D7ED9 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892951A2AAD00B7008D7ED9 /* MainTabViewController.swift */; };
 		E892951E2AAD0622008D7ED9 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892951D2AAD0622008D7ED9 /* AccountViewController.swift */; };
 		E89295212AAD0ED5008D7ED9 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295202AAD0ED5008D7ED9 /* KeychainHelper.swift */; };
@@ -27,8 +27,8 @@
 		E89295252AAD1142008D7ED9 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295242AAD1142008D7ED9 /* AuthenticationViewController.swift */; };
 		E892952B2AAD166E008D7ED9 /* AuthenticateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892952A2AAD166E008D7ED9 /* AuthenticateView.swift */; };
 		E892952E2AAD18AF008D7ED9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892952D2AAD18AF008D7ED9 /* MenuViewController.swift */; };
-		E89295312AAD1A20008D7ED9 /* SnapKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E89295302AAD1A20008D7ED9 /* SnapKit.xcframework */; };
-		E89295322AAD1A20008D7ED9 /* SnapKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E89295302AAD1A20008D7ED9 /* SnapKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E8E884242BB6838100F1FBB8 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E884232BB6838100F1FBB8 /* BoardView.swift */; };
+		E8E884272BB6848500F1FBB8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E8E884262BB6848500F1FBB8 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +55,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E89295322AAD1A20008D7ED9 /* SnapKit.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +62,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E869A2B42BB69B760033AACD /* ChessBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessBoard.swift; sourceTree = "<group>"; };
+		E869A2B72BB69BDE0033AACD /* UIView+Jiggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Jiggle.swift"; sourceTree = "<group>"; };
 		E89294D82AA97C35008D7ED9 /* Chessbic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chessbic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89294DB2AA97C35008D7ED9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E89294DD2AA97C35008D7ED9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,11 +76,9 @@
 		E89294F82AA97C36008D7ED9 /* ChessbicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChessbicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89294FC2AA97C36008D7ED9 /* ChessbicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessbicUITests.swift; sourceTree = "<group>"; };
 		E89294FE2AA97C36008D7ED9 /* ChessbicUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessbicUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		E892950B2AA98189008D7ED9 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
-		E892950F2AA98566008D7ED9 /* ChessboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessboardCell.swift; sourceTree = "<group>"; };
 		E89295122AAA8D04008D7ED9 /* ChessPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessPiece.swift; sourceTree = "<group>"; };
 		E89295142AAA9D74008D7ED9 /* ChessPieceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessPieceTests.swift; sourceTree = "<group>"; };
-		E89295162AAAA012008D7ED9 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		E89295162AAAA012008D7ED9 /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
 		E892951A2AAD00B7008D7ED9 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		E892951D2AAD0622008D7ED9 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		E89295202AAD0ED5008D7ED9 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
@@ -87,7 +86,7 @@
 		E89295242AAD1142008D7ED9 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		E892952A2AAD166E008D7ED9 /* AuthenticateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateView.swift; sourceTree = "<group>"; };
 		E892952D2AAD18AF008D7ED9 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		E89295302AAD1A20008D7ED9 /* SnapKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SnapKit.xcframework; path = Carthage/Build/SnapKit.xcframework; sourceTree = "<group>"; };
+		E8E884232BB6838100F1FBB8 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E89295312AAD1A20008D7ED9 /* SnapKit.xcframework in Frameworks */,
+				E8E884272BB6848500F1FBB8 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +115,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E869A2B62BB69BCC0033AACD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E869A2B72BB69BDE0033AACD /* UIView+Jiggle.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E89294CF2AA97C35008D7ED9 = {
 			isa = PBXGroup;
 			children = (
@@ -152,7 +159,6 @@
 				E89294E42AA97C36008D7ED9 /* Assets.xcassets */,
 				E89294E62AA97C36008D7ED9 /* LaunchScreen.storyboard */,
 				E89294E92AA97C36008D7ED9 /* Info.plist */,
-				E892950B2AA98189008D7ED9 /* SwiftUIView.swift */,
 			);
 			path = Chessbic;
 			sourceTree = "<group>";
@@ -178,8 +184,8 @@
 		E892950D2AA98549008D7ED9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E869A2B62BB69BCC0033AACD /* Extensions */,
 				E89295272AAD154D008D7ED9 /* Buttons */,
-				E89295262AAD1543008D7ED9 /* CollectionViewCells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,8 +193,9 @@
 		E89295112AAA8CE2008D7ED9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E869A2B42BB69B760033AACD /* ChessBoard.swift */,
 				E89295122AAA8D04008D7ED9 /* ChessPiece.swift */,
-				E89295162AAAA012008D7ED9 /* Coordinate.swift */,
+				E89295162AAAA012008D7ED9 /* Square.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -197,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				E89294DF2AA97C35008D7ED9 /* GameViewController.swift */,
+				E8E884232BB6838100F1FBB8 /* BoardView.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -228,14 +236,6 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
-		E89295262AAD1543008D7ED9 /* CollectionViewCells */ = {
-			isa = PBXGroup;
-			children = (
-				E892950F2AA98566008D7ED9 /* ChessboardCell.swift */,
-			);
-			path = CollectionViewCells;
-			sourceTree = "<group>";
-		};
 		E89295272AAD154D008D7ED9 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,7 +254,6 @@
 		E892952F2AAD1A20008D7ED9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E89295302AAD1A20008D7ED9 /* SnapKit.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -276,6 +275,9 @@
 			dependencies = (
 			);
 			name = Chessbic;
+			packageProductDependencies = (
+				E8E884262BB6848500F1FBB8 /* SnapKit */,
+			);
 			productName = Chessbic;
 			productReference = E89294D82AA97C35008D7ED9 /* Chessbic.app */;
 			productType = "com.apple.product-type.application";
@@ -348,6 +350,9 @@
 				Base,
 			);
 			mainGroup = E89294CF2AA97C35008D7ED9;
+			packageReferences = (
+				E8E884252BB6848500F1FBB8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = E89294D92AA97C35008D7ED9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -391,17 +396,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				E892952B2AAD166E008D7ED9 /* AuthenticateView.swift in Sources */,
-				E89295172AAAA012008D7ED9 /* Coordinate.swift in Sources */,
+				E89295172AAAA012008D7ED9 /* Square.swift in Sources */,
+				E8E884242BB6838100F1FBB8 /* BoardView.swift in Sources */,
 				E892951B2AAD00B7008D7ED9 /* MainTabViewController.swift in Sources */,
+				E869A2B82BB69BDE0033AACD /* UIView+Jiggle.swift in Sources */,
+				E869A2B52BB69B760033AACD /* ChessBoard.swift in Sources */,
 				E892952E2AAD18AF008D7ED9 /* MenuViewController.swift in Sources */,
 				E89294E02AA97C35008D7ED9 /* GameViewController.swift in Sources */,
 				E89295212AAD0ED5008D7ED9 /* KeychainHelper.swift in Sources */,
 				E89295252AAD1142008D7ED9 /* AuthenticationViewController.swift in Sources */,
 				E89294DC2AA97C35008D7ED9 /* AppDelegate.swift in Sources */,
-				E892950C2AA98189008D7ED9 /* SwiftUIView.swift in Sources */,
 				E89295232AAD0F6B008D7ED9 /* AuthenticationService.swift in Sources */,
 				E89294DE2AA97C35008D7ED9 /* SceneDelegate.swift in Sources */,
-				E89295102AA98566008D7ED9 /* ChessboardCell.swift in Sources */,
 				E89295132AAA8D04008D7ED9 /* ChessPiece.swift in Sources */,
 				E892951E2AAD0622008D7ED9 /* AccountViewController.swift in Sources */,
 			);
@@ -741,6 +747,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E8E884252BB6848500F1FBB8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E8E884262BB6848500F1FBB8 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8E884252BB6848500F1FBB8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E89294D02AA97C35008D7ED9 /* Project object */;
 }

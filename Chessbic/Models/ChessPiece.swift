@@ -7,19 +7,121 @@
 
 import Foundation
 
-enum ChessPiece: String {
-    case Pawn = "P"
-    case Knight = "C"
-    case Bishop = "B"
-    case Rook = "R"
-    case Queen = "Q"
-    case King = "K"
-    case None = ""
+enum Color: String {
+    case White = "w"
+    case Black = "b"
+    
+    func toImageName() -> String {
+        switch self {
+        case .Black:
+            return "black"
+        case .White:
+            return "white"
+        }
+    }
+}
+
+enum PieceType {
+    case Pawn
+    case Knight
+    case Bishop
+    case Rook
+    case Queen
+    case King
+    
+    func toImageName () -> String {
+        switch self {
+        case .Pawn:
+            return "pawn"
+        case .Knight:
+            return "knight"
+        case .Bishop:
+            return "bishop"
+        case .Rook:
+            return "rook"
+        case .Queen:
+            return "queen"
+        case .King:
+            return "king"
+        }
+    }
+}
+
+struct ChessPiece {
+    var color: Color
+    var pieceType: PieceType
+    
+    init(color: Color, pieceType: PieceType) {
+        self.color = color
+        self.pieceType = pieceType
+    }
+    
+    init?(char: Character) {
+        if char.isLowercase {
+            self.color = .Black
+        } else {
+            self.color = .White
+        }
+        switch char.lowercased() {
+        case "p":
+            self.pieceType = .Pawn
+        case "n":
+            self.pieceType = .Knight
+        case "b":
+            self.pieceType = .Bishop
+        case "r":
+            self.pieceType = .Rook
+        case "q":
+            self.pieceType = .Queen
+        case "k":
+            self.pieceType = .King
+        default:
+            return nil
+        }
+    }
+    
+    func toChar() -> Character {
+        var char = ""
+        switch self.pieceType {
+        case .Pawn:
+            char = "p"
+        case .Knight:
+            char = "n"
+        case .Bishop:
+            char = "b"
+        case .Rook:
+            char = "r"
+        case .Queen:
+            char = "q"
+        case .King:
+            char = "k"
+        }
+        return self.color == .White ? Character(char.uppercased()) : Character(char)
+    }
+    
+    func toString() -> String {
+        var char = ""
+        switch self.pieceType {
+        case .Pawn:
+            char = "p"
+        case .Knight:
+            char = "n"
+        case .Bishop:
+            char = "b"
+        case .Rook:
+            char = "r"
+        case .Queen:
+            char = "q"
+        case .King:
+            char = "k"
+        }
+        return self.color == .White ? String(char.uppercased()) : char
+    }
 }
 
 extension ChessPiece {
-    func possibleMovesForPiece(square: Coordinate) -> [Coordinate]{
-        switch self {
+    func possibleMovesForPiece(square: Square) -> [Square]{
+        switch self.pieceType {
         case .Bishop:
             return getBishopMoves(square: square)
         case .Rook:
@@ -27,95 +129,92 @@ extension ChessPiece {
         case .Knight:
             return getKnightMoves(square: square)
         case .Queen:
-            return getBishopMoves(square: square) + getRookMoves(square: square)
+            return getQueenMoves(square: square)
         case .King:
             return getKingMoves(square: square)
         case .Pawn:
             return getPawnMoves(square: square)
-        case .None:
-            return []
         }
     }
     
-    private func isValidSquare(x: Int, y: Int) -> Bool {
-        return !(x < 0 || y < 0 || x >= BOARD_SIZE || y >= BOARD_SIZE)
+    private func generateMoves(square: Square, moves: [(Int, Int)], increment: Bool = false) -> [Square] {
+        var squares: [Square] = []
+        for move in moves {
+            var file = square.file + move.0
+            var rank = square.rank + move.1
+            while isValidSquare(file: file, rank: rank) {
+                squares.append(Square(file: file, rank: rank))
+                if increment {
+                    file += move.0
+                    rank += move.1
+                } else {
+                    break
+                }
+            }
+        }
+        return squares
     }
     
-    private func getPawnMoves(square: Coordinate) -> [Coordinate] {
-        return [Coordinate(x: square.x, y: square.y + 1)]
+    private func isValidSquare(file: Int, rank: Int) -> Bool {
+        return !(file < 0 || rank < 0 || file >= BOARD_SIZE || rank >= BOARD_SIZE)
     }
     
-    private func getKingMoves(square: Coordinate) -> [Coordinate] {
-        var coordinates: [Coordinate] = []
+    private func getPawnMoves(square: Square) -> [Square] {
+        var moves: [Square] = []
+        if self.color == .White {
+            // Move one square forward
+            if square.rank < 7 {
+                moves.append(Square(file: square.file, rank: square.rank + 1))
+            }
+            if square.rank == 1 {
+                moves.append(Square(file: square.file, rank: square.rank + 2))
+            }
+            if square.file > 0 {
+                moves.append(Square(file: square.file - 1, rank: square.rank + 1))
+            }
+            if square.file < 7 {
+                moves.append(Square(file: square.file + 1, rank: square.rank + 1))
+            }
+        }
+        else {
+            if square.rank > 0 {
+                moves.append(Square(file: square.file, rank: square.rank - 1))
+            }
+            if square.rank == 6 {
+                moves.append(Square(file: square.file, rank: square.rank - 2))
+            }
+            if square.file > 0 {
+                moves.append(Square(file: square.file - 1, rank: square.rank - 1))
+            }
+            if square.file < 7 {
+                moves.append(Square(file: square.file + 1, rank: square.rank - 1))
+            }
+        }
+        return moves
+    }
+    
+    private func getQueenMoves(square: Square) -> [Square] {
+        let queen_moves = [(1, 1), (-1, -1), (-1, 1), (1, -1), (1, 0), (-1, 0), (0, 1), (0, -1)]
+        return self.generateMoves(square: square, moves: queen_moves, increment: true)
+    }
+    
+    private func getKingMoves(square: Square) -> [Square] {
         let moves = [(0, 1), (0, -1), (1, 0), (-1, 0), (1, 1), (-1, -1), (-1, 1), (1, -1)]
-        for move in moves {
-            if isValidSquare(x: square.x + move.0, y: square.y + move.1) {
-                coordinates.append(Coordinate(x: square.x + move.0, y: square.y + move.1))
-            }
-        }
-        return coordinates
+        return self.generateMoves(square: square, moves: moves, increment: false)
     }
     
-    private func getKnightMoves(square: Coordinate) -> [Coordinate] {
-        var coordinates: [Coordinate] = []
-        let moves = [(-2, 1), (-1, 2), (1, 2), (2, 1), (2, -1), (1, -2), (-1, -2)]
-        for move in moves {
-            if isValidSquare(x: square.x + move.0, y: square.y + move.1) {
-                coordinates.append(Coordinate(x: square.x + move.0, y: square.y + move.1))
-            }
-        }
-        return coordinates
+    private func getKnightMoves(square: Square) -> [Square] {
+        let moves = [(2, 1), (2, -1), (-2, 1), (-2, -1), (1, 2), (-1, 2), (1, -2), (-1, -2)]
+        return self.generateMoves(square: square, moves: moves, increment: false)
     }
     
-    private func getRookMoves(square: Coordinate) -> [Coordinate] {
-        var coordinates: [Coordinate] = []
-        for i in 0..<BOARD_SIZE {
-            coordinates.append(Coordinate(x: i, y: square.y))
-            coordinates.append(Coordinate(x: square.x, y: i))
-        }
-        return coordinates
+    private func getRookMoves(square: Square) -> [Square] {
+        let rook_moves = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+        return self.generateMoves(square: square, moves: rook_moves, increment: true)
     }
     
-    private func getBishopMoves(square: Coordinate) -> [Coordinate] {
-        var coordinates: [Coordinate] = []
-        //Bottom right diag
-        var i = square.x
-        var j = square.y
-        
-        while i < BOARD_SIZE && j < BOARD_SIZE {
-            coordinates.append(Coordinate(x: i, y: j))
-            i += 1
-            j += 1
-        }
-        //Bottom left diag
-        i = square.x
-        j = square.y
-        
-        while i < BOARD_SIZE && j >= 0 {
-            coordinates.append(Coordinate(x: i, y: j))
-            i += 1
-            j -= 1
-        }
-        //Top right diag
-        i = square.x
-        j = square.y
-        
-        while i >= 0 && j < BOARD_SIZE {
-            coordinates.append(Coordinate(x: i, y: j))
-            i -= 1
-            j += 1
-        }
-        //Top left diag
-        i = square.x
-        j = square.y
-        
-        while i >= 0 && j >= 0 {
-            coordinates.append(Coordinate(x: i, y: j))
-            i -= 1
-            j -= 1
-        }
-        return coordinates
+    private func getBishopMoves(square: Square) -> [Square] {
+        let bishop_moves = [(1, 1), (-1, -1), (-1, 1), (1, -1)]
+        return self.generateMoves(square: square, moves: bishop_moves, increment: true)
     }
 }
-
-

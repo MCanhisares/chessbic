@@ -11,76 +11,76 @@ final class ChessPieceTests: XCTestCase {
 
 
     func testRookMoves() {
-        let chessPiece = ChessPiece.Rook
+        let chessPiece = ChessPiece(color: .White, pieceType: .Rook)
         let validRookMoves = [
-            Coordinate(x: 0, y: 0),Coordinate(x: 0, y: 0),
-            Coordinate(x: 1, y: 0),Coordinate(x: 0, y: 1),
-            Coordinate(x: 2, y: 0),Coordinate(x: 0, y: 2),
-            Coordinate(x: 3, y: 0),Coordinate(x: 0, y: 3),
-            Coordinate(x: 4, y: 0),Coordinate(x: 0, y: 4),
-            Coordinate(x: 5, y: 0),Coordinate(x: 0, y: 5),
-            Coordinate(x: 6, y: 0),Coordinate(x: 0, y: 6),
-            Coordinate(x: 7, y: 0),Coordinate(x: 0, y: 7)]
-        let candidateRookMoves = chessPiece.possibleMovesForPiece(square: Coordinate(x: 0, y: 0))
+            Square(file: 0, rank: 0),Square(file: 0, rank: 0),
+            Square(file: 1, rank: 0),Square(file: 0, rank: 1),
+            Square(file: 2, rank: 0),Square(file: 0, rank: 2),
+            Square(file: 3, rank: 0),Square(file: 0, rank: 3),
+            Square(file: 4, rank: 0),Square(file: 0, rank: 4),
+            Square(file: 5, rank: 0),Square(file: 0, rank: 5),
+            Square(file: 6, rank: 0),Square(file: 0, rank: 6),
+            Square(file: 7, rank: 0),Square(file: 0, rank: 7)]
+        let candidateRookMoves = chessPiece.possibleMovesForPiece(square: Square(file: 0, rank: 0))
         XCTAssertEqual(validRookMoves, candidateRookMoves)
     }
     
     func testBishopMoves() {
-        let chessPiece = ChessPiece.Bishop
+        let chessPiece = ChessPiece(color: .White, pieceType: .Bishop)
         let validBishopMoves = [
-            Coordinate(x: 0, y: 0),Coordinate(x: 1, y: 1),
-            Coordinate(x: 2, y: 2),Coordinate(x: 3, y: 3),
-            Coordinate(x: 4, y: 4),Coordinate(x: 5, y: 5),
-            Coordinate(x: 6, y: 6),Coordinate(x: 7, y: 7),
-            Coordinate(x: 0, y: 0),Coordinate(x: 0, y: 0),
-            Coordinate(x: 0, y: 0)]
-        let candidateBishopMoves = chessPiece.possibleMovesForPiece(square: Coordinate(x: 0, y: 0))
+            Square(file: 0, rank: 0),Square(file: 1, rank: 1),
+            Square(file: 2, rank: 2),Square(file: 3, rank: 3),
+            Square(file: 4, rank: 4),Square(file: 5, rank: 5),
+            Square(file: 6, rank: 6),Square(file: 7, rank: 7),
+            Square(file: 0, rank: 0),Square(file: 0, rank: 0),
+            Square(file: 0, rank: 0)]
+        let candidateBishopMoves = chessPiece.possibleMovesForPiece(square: Square(file: 0, rank: 0))
         XCTAssertEqual(validBishopMoves, candidateBishopMoves)
     }
     
     func testKnightMoves() {
-        let chessPiece = ChessPiece.Knight
+        let chessPiece = ChessPiece(color: .White, pieceType: .Knight)
         let validKnightMoves = [
-            Coordinate(x: 1, y: 2),Coordinate(x: 2, y: 1)]
-        let candidateKnightMoves = chessPiece.possibleMovesForPiece(square: Coordinate(x: 0, y: 0))
+            Square(file: 1, rank: 2),Square(file: 2, rank: 1)]
+        let candidateKnightMoves = chessPiece.possibleMovesForPiece(square: Square(file: 0, rank: 0))
         XCTAssertEqual(validKnightMoves, candidateKnightMoves)
     }
     
     func testPawnMoves() {
-        let chessPiece = ChessPiece.Pawn
-        let validPawnMoves = [Coordinate(x: 0, y: 1)]
-        let candidatePawnMoves = chessPiece.possibleMovesForPiece(square: Coordinate(x: 0, y: 0))
+        let chessPiece = ChessPiece(color: .White, pieceType: .Pawn)
+        let validPawnMoves = [Square(file: 0, rank: 1)]
+        let candidatePawnMoves = chessPiece.possibleMovesForPiece(square: Square(file: 0, rank: 0))
         XCTAssertEqual(validPawnMoves, candidatePawnMoves)
     }
     
     func testKingMoves() {
-        let chessPiece = ChessPiece.King
+        let chessPiece = ChessPiece(color: .White, pieceType: .King)
         let validKingMoves = [
-            Coordinate(x: 0, y: 1),
-            Coordinate(x: 1, y: 0),Coordinate(x: 1, y: 1)]
-        let candidateKingMoves = chessPiece.possibleMovesForPiece(square: Coordinate(x: 0, y: 0))
+            Square(file: 0, rank: 1),
+            Square(file: 1, rank: 0),Square(file: 1, rank: 1)]
+        let candidateKingMoves = chessPiece.possibleMovesForPiece(square: Square(file: 0, rank: 0))
         XCTAssertEqual(validKingMoves, candidateKingMoves)
     }
     
     func testQueenMoves() {
-        let chessPiece = ChessPiece.Queen
+        let chessPiece = ChessPiece(color: .White, pieceType: .Queen)
         let validQueenMoves = [
-            Coordinate(x: 0, y: 0),Coordinate(x: 1, y: 1),
-            Coordinate(x: 2, y: 2),Coordinate(x: 3, y: 3),
-            Coordinate(x: 4, y: 4),Coordinate(x: 5, y: 5),
-            Coordinate(x: 6, y: 6),Coordinate(x: 7, y: 7),
-            Coordinate(x: 0, y: 0),Coordinate(x: 0, y: 0),
-            Coordinate(x: 0, y: 0),
-            Coordinate(x: 0, y: 0),Coordinate(x: 0, y: 0),
-            Coordinate(x: 1, y: 0),Coordinate(x: 0, y: 1),
-            Coordinate(x: 2, y: 0),Coordinate(x: 0, y: 2),
-            Coordinate(x: 3, y: 0),Coordinate(x: 0, y: 3),
-            Coordinate(x: 4, y: 0),Coordinate(x: 0, y: 4),
-            Coordinate(x: 5, y: 0),Coordinate(x: 0, y: 5),
-            Coordinate(x: 6, y: 0),Coordinate(x: 0, y: 6),
-            Coordinate(x: 7, y: 0),Coordinate(x: 0, y: 7),
+            Square(file: 0, rank: 0),Square(file: 1, rank: 1),
+            Square(file: 2, rank: 2),Square(file: 3, rank: 3),
+            Square(file: 4, rank: 4),Square(file: 5, rank: 5),
+            Square(file: 6, rank: 6),Square(file: 7, rank: 7),
+            Square(file: 0, rank: 0),Square(file: 0, rank: 0),
+            Square(file: 0, rank: 0),
+            Square(file: 0, rank: 0),Square(file: 0, rank: 0),
+            Square(file: 1, rank: 0),Square(file: 0, rank: 1),
+            Square(file: 2, rank: 0),Square(file: 0, rank: 2),
+            Square(file: 3, rank: 0),Square(file: 0, rank: 3),
+            Square(file: 4, rank: 0),Square(file: 0, rank: 4),
+            Square(file: 5, rank: 0),Square(file: 0, rank: 5),
+            Square(file: 6, rank: 0),Square(file: 0, rank: 6),
+            Square(file: 7, rank: 0),Square(file: 0, rank: 7),
             ]
-        let candidateQueenMoves = chessPiece.possibleMovesForPiece(square: Coordinate(x: 0, y: 0))
+        let candidateQueenMoves = chessPiece.possibleMovesForPiece(square: Square(file: 0, rank: 0))
         XCTAssertEqual(validQueenMoves, candidateQueenMoves)
     }
 }
