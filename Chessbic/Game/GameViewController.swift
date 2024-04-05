@@ -11,6 +11,7 @@ class GameViewController: UIViewController {
     
     lazy var boardView: BoardView = BoardView()
     private var game = Game()
+    private var chessService = ChessService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -159,6 +160,9 @@ extension GameViewController: BoardViewDelegate {
                     })
                 }
                 self.present(alert, animated: true)
+            }
+            self.chessService.makeMove(pgnMove: move.to.toPGN()) { result in
+                print(result)                
             }
             self.update()
         })

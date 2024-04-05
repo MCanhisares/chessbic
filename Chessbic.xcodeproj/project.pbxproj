@@ -20,13 +20,21 @@
 		E892951B2AAD00B7008D7ED9 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892951A2AAD00B7008D7ED9 /* MainTabViewController.swift */; };
 		E892951E2AAD0622008D7ED9 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892951D2AAD0622008D7ED9 /* AccountViewController.swift */; };
 		E89295212AAD0ED5008D7ED9 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295202AAD0ED5008D7ED9 /* KeychainHelper.swift */; };
-		E89295232AAD0F6B008D7ED9 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295222AAD0F6B008D7ED9 /* AuthenticationService.swift */; };
 		E89295252AAD1142008D7ED9 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295242AAD1142008D7ED9 /* AuthenticationViewController.swift */; };
 		E892952B2AAD166E008D7ED9 /* AuthenticateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892952A2AAD166E008D7ED9 /* AuthenticateView.swift */; };
 		E892952E2AAD18AF008D7ED9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892952D2AAD18AF008D7ED9 /* MenuViewController.swift */; };
 		E8E428662BBFA22F00F8B273 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E428652BBFA22F00F8B273 /* Game.swift */; };
 		E8E428692BBFB73600F8B273 /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = E8E428682BBFB73600F8B273 /* Inject */; };
 		E8E4286C2BBFC60000F8B273 /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = E8E4286B2BBFC60000F8B273 /* GRPC */; };
+		E8E428792BBFC9FD00F8B273 /* chess_server.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E428772BBFC9FD00F8B273 /* chess_server.pb.swift */; };
+		E8E4287A2BBFC9FD00F8B273 /* chess_server.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E428782BBFC9FD00F8B273 /* chess_server.grpc.swift */; };
+		E8E4287C2BBFCA9100F8B273 /* ClientFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E4287B2BBFCA9100F8B273 /* ClientFactory.swift */; };
+		E8E4287F2BBFCE3900F8B273 /* GRPCClient+makeStreamingCallWithRetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E4287E2BBFCE3900F8B273 /* GRPCClient+makeStreamingCallWithRetry.swift */; };
+		E8E428812BBFCE6100F8B273 /* GRPCClient+makeUnaryCallWithRetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E428802BBFCE6100F8B273 /* GRPCClient+makeUnaryCallWithRetry.swift */; };
+		E8E428832BBFCEDD00F8B273 /* ChessService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E428822BBFCEDD00F8B273 /* ChessService.swift */; };
+		E8E428852BBFCF2400F8B273 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E428842BBFCF2400F8B273 /* AuthenticationService.swift */; };
+		E8E428892BBFD3F500F8B273 /* authentication.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E428872BBFD3F400F8B273 /* authentication.pb.swift */; };
+		E8E4288A2BBFD3F500F8B273 /* authentication.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E428882BBFD3F400F8B273 /* authentication.grpc.swift */; };
 		E8E884242BB6838100F1FBB8 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E884232BB6838100F1FBB8 /* BoardView.swift */; };
 		E8E884272BB6848500F1FBB8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E8E884262BB6848500F1FBB8 /* SnapKit */; };
 /* End PBXBuildFile section */
@@ -79,12 +87,23 @@
 		E892951A2AAD00B7008D7ED9 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		E892951D2AAD0622008D7ED9 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		E89295202AAD0ED5008D7ED9 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
-		E89295222AAD0F6B008D7ED9 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		E89295242AAD1142008D7ED9 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		E892952A2AAD166E008D7ED9 /* AuthenticateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateView.swift; sourceTree = "<group>"; };
 		E892952D2AAD18AF008D7ED9 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		E8E428652BBFA22F00F8B273 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		E8E428702BBFC7A800F8B273 /* app_tests.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = app_tests.yaml; path = .github/workflows/app_tests.yaml; sourceTree = "<group>"; };
+		E8E428722BBFC8A300F8B273 /* chess_server.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = chess_server.proto; sourceTree = "<group>"; };
+		E8E428742BBFC8F100F8B273 /* generate_proto.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = generate_proto.sh; sourceTree = "<group>"; };
+		E8E428772BBFC9FD00F8B273 /* chess_server.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chess_server.pb.swift; sourceTree = "<group>"; };
+		E8E428782BBFC9FD00F8B273 /* chess_server.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chess_server.grpc.swift; sourceTree = "<group>"; };
+		E8E4287B2BBFCA9100F8B273 /* ClientFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientFactory.swift; sourceTree = "<group>"; };
+		E8E4287E2BBFCE3900F8B273 /* GRPCClient+makeStreamingCallWithRetry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GRPCClient+makeStreamingCallWithRetry.swift"; sourceTree = "<group>"; };
+		E8E428802BBFCE6100F8B273 /* GRPCClient+makeUnaryCallWithRetry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GRPCClient+makeUnaryCallWithRetry.swift"; sourceTree = "<group>"; };
+		E8E428822BBFCEDD00F8B273 /* ChessService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessService.swift; sourceTree = "<group>"; };
+		E8E428842BBFCF2400F8B273 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		E8E428862BBFD30400F8B273 /* authentication.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = authentication.proto; sourceTree = "<group>"; };
+		E8E428872BBFD3F400F8B273 /* authentication.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = authentication.pb.swift; sourceTree = "<group>"; };
+		E8E428882BBFD3F400F8B273 /* authentication.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = authentication.grpc.swift; sourceTree = "<group>"; };
 		E8E884232BB6838100F1FBB8 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +146,8 @@
 		E89294CF2AA97C35008D7ED9 = {
 			isa = PBXGroup;
 			children = (
+				E8E428732BBFC8D900F8B273 /* Scripts */,
+				E8E428712BBFC84200F8B273 /* Protofiles */,
 				E8E4286F2BBFC79900F8B273 /* Github */,
 				E89294DA2AA97C35008D7ED9 /* Chessbic */,
 				E89294F12AA97C36008D7ED9 /* ChessbicTests */,
@@ -149,6 +170,7 @@
 		E89294DA2AA97C35008D7ED9 /* Chessbic */ = {
 			isa = PBXGroup;
 			children = (
+				E8E428752BBFC90F00F8B273 /* Networking */,
 				E892952C2AAD1894008D7ED9 /* Menu */,
 				E892951F2AAD0EB9008D7ED9 /* Authentication */,
 				E892951C2AAD0600008D7ED9 /* Account */,
@@ -230,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				E89295202AAD0ED5008D7ED9 /* KeychainHelper.swift */,
-				E89295222AAD0F6B008D7ED9 /* AuthenticationService.swift */,
 				E89295242AAD1142008D7ED9 /* AuthenticationViewController.swift */,
 			);
 			path = Authentication;
@@ -264,6 +285,55 @@
 				E8E428702BBFC7A800F8B273 /* app_tests.yaml */,
 			);
 			name = Github;
+			sourceTree = "<group>";
+		};
+		E8E428712BBFC84200F8B273 /* Protofiles */ = {
+			isa = PBXGroup;
+			children = (
+				E8E428862BBFD30400F8B273 /* authentication.proto */,
+				E8E428722BBFC8A300F8B273 /* chess_server.proto */,
+			);
+			path = Protofiles;
+			sourceTree = "<group>";
+		};
+		E8E428732BBFC8D900F8B273 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				E8E428742BBFC8F100F8B273 /* generate_proto.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		E8E428752BBFC90F00F8B273 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E8E4287D2BBFCE2B00F8B273 /* Extensions */,
+				E8E428762BBFC91900F8B273 /* Generated */,
+				E8E4287B2BBFCA9100F8B273 /* ClientFactory.swift */,
+				E8E428822BBFCEDD00F8B273 /* ChessService.swift */,
+				E8E428842BBFCF2400F8B273 /* AuthenticationService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E8E428762BBFC91900F8B273 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				E8E428882BBFD3F400F8B273 /* authentication.grpc.swift */,
+				E8E428872BBFD3F400F8B273 /* authentication.pb.swift */,
+				E8E428782BBFC9FD00F8B273 /* chess_server.grpc.swift */,
+				E8E428772BBFC9FD00F8B273 /* chess_server.pb.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		E8E4287D2BBFCE2B00F8B273 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E8E4287E2BBFCE3900F8B273 /* GRPCClient+makeStreamingCallWithRetry.swift */,
+				E8E428802BBFCE6100F8B273 /* GRPCClient+makeUnaryCallWithRetry.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,17 +477,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8E4287F2BBFCE3900F8B273 /* GRPCClient+makeStreamingCallWithRetry.swift in Sources */,
+				E8E428892BBFD3F500F8B273 /* authentication.pb.swift in Sources */,
 				E892952B2AAD166E008D7ED9 /* AuthenticateView.swift in Sources */,
 				E8E884242BB6838100F1FBB8 /* BoardView.swift in Sources */,
+				E8E4288A2BBFD3F500F8B273 /* authentication.grpc.swift in Sources */,
 				E892951B2AAD00B7008D7ED9 /* MainTabViewController.swift in Sources */,
 				E869A2B82BB69BDE0033AACD /* UIView+Jiggle.swift in Sources */,
+				E8E4287C2BBFCA9100F8B273 /* ClientFactory.swift in Sources */,
+				E8E428852BBFCF2400F8B273 /* AuthenticationService.swift in Sources */,
 				E869A2B52BB69B760033AACD /* Board.swift in Sources */,
 				E892952E2AAD18AF008D7ED9 /* MenuViewController.swift in Sources */,
 				E89294E02AA97C35008D7ED9 /* GameViewController.swift in Sources */,
 				E89295212AAD0ED5008D7ED9 /* KeychainHelper.swift in Sources */,
+				E8E4287A2BBFC9FD00F8B273 /* chess_server.grpc.swift in Sources */,
 				E89295252AAD1142008D7ED9 /* AuthenticationViewController.swift in Sources */,
 				E89294DC2AA97C35008D7ED9 /* AppDelegate.swift in Sources */,
-				E89295232AAD0F6B008D7ED9 /* AuthenticationService.swift in Sources */,
+				E8E428812BBFCE6100F8B273 /* GRPCClient+makeUnaryCallWithRetry.swift in Sources */,
+				E8E428792BBFC9FD00F8B273 /* chess_server.pb.swift in Sources */,
+				E8E428832BBFCEDD00F8B273 /* ChessService.swift in Sources */,
 				E89294DE2AA97C35008D7ED9 /* SceneDelegate.swift in Sources */,
 				E892951E2AAD0622008D7ED9 /* AccountViewController.swift in Sources */,
 				E8E428662BBFA22F00F8B273 /* Game.swift in Sources */,
