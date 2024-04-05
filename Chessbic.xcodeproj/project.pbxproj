@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E869A2B52BB69B760033AACD /* ChessBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E869A2B42BB69B760033AACD /* ChessBoard.swift */; };
+		E869A2B52BB69B760033AACD /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = E869A2B42BB69B760033AACD /* Board.swift */; };
 		E869A2B82BB69BDE0033AACD /* UIView+Jiggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E869A2B72BB69BDE0033AACD /* UIView+Jiggle.swift */; };
 		E89294DC2AA97C35008D7ED9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294DB2AA97C35008D7ED9 /* AppDelegate.swift */; };
 		E89294DE2AA97C35008D7ED9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294DD2AA97C35008D7ED9 /* SceneDelegate.swift */; };
@@ -17,9 +17,6 @@
 		E89294F32AA97C36008D7ED9 /* ChessbicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294F22AA97C36008D7ED9 /* ChessbicTests.swift */; };
 		E89294FD2AA97C36008D7ED9 /* ChessbicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294FC2AA97C36008D7ED9 /* ChessbicUITests.swift */; };
 		E89294FF2AA97C36008D7ED9 /* ChessbicUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89294FE2AA97C36008D7ED9 /* ChessbicUITestsLaunchTests.swift */; };
-		E89295132AAA8D04008D7ED9 /* ChessPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295122AAA8D04008D7ED9 /* ChessPiece.swift */; };
-		E89295152AAA9D74008D7ED9 /* ChessPieceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295142AAA9D74008D7ED9 /* ChessPieceTests.swift */; };
-		E89295172AAAA012008D7ED9 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295162AAAA012008D7ED9 /* Square.swift */; };
 		E892951B2AAD00B7008D7ED9 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892951A2AAD00B7008D7ED9 /* MainTabViewController.swift */; };
 		E892951E2AAD0622008D7ED9 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892951D2AAD0622008D7ED9 /* AccountViewController.swift */; };
 		E89295212AAD0ED5008D7ED9 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295202AAD0ED5008D7ED9 /* KeychainHelper.swift */; };
@@ -27,6 +24,9 @@
 		E89295252AAD1142008D7ED9 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89295242AAD1142008D7ED9 /* AuthenticationViewController.swift */; };
 		E892952B2AAD166E008D7ED9 /* AuthenticateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892952A2AAD166E008D7ED9 /* AuthenticateView.swift */; };
 		E892952E2AAD18AF008D7ED9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892952D2AAD18AF008D7ED9 /* MenuViewController.swift */; };
+		E8E428662BBFA22F00F8B273 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E428652BBFA22F00F8B273 /* Game.swift */; };
+		E8E428692BBFB73600F8B273 /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = E8E428682BBFB73600F8B273 /* Inject */; };
+		E8E4286C2BBFC60000F8B273 /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = E8E4286B2BBFC60000F8B273 /* GRPC */; };
 		E8E884242BB6838100F1FBB8 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E884232BB6838100F1FBB8 /* BoardView.swift */; };
 		E8E884272BB6848500F1FBB8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E8E884262BB6848500F1FBB8 /* SnapKit */; };
 /* End PBXBuildFile section */
@@ -62,7 +62,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E869A2B42BB69B760033AACD /* ChessBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessBoard.swift; sourceTree = "<group>"; };
+		E869A2B42BB69B760033AACD /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		E869A2B72BB69BDE0033AACD /* UIView+Jiggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Jiggle.swift"; sourceTree = "<group>"; };
 		E89294D82AA97C35008D7ED9 /* Chessbic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chessbic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89294DB2AA97C35008D7ED9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,9 +76,6 @@
 		E89294F82AA97C36008D7ED9 /* ChessbicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChessbicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89294FC2AA97C36008D7ED9 /* ChessbicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessbicUITests.swift; sourceTree = "<group>"; };
 		E89294FE2AA97C36008D7ED9 /* ChessbicUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessbicUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		E89295122AAA8D04008D7ED9 /* ChessPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessPiece.swift; sourceTree = "<group>"; };
-		E89295142AAA9D74008D7ED9 /* ChessPieceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessPieceTests.swift; sourceTree = "<group>"; };
-		E89295162AAAA012008D7ED9 /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
 		E892951A2AAD00B7008D7ED9 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		E892951D2AAD0622008D7ED9 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		E89295202AAD0ED5008D7ED9 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
@@ -86,6 +83,7 @@
 		E89295242AAD1142008D7ED9 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		E892952A2AAD166E008D7ED9 /* AuthenticateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateView.swift; sourceTree = "<group>"; };
 		E892952D2AAD18AF008D7ED9 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		E8E428652BBFA22F00F8B273 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		E8E884232BB6838100F1FBB8 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +93,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8E884272BB6848500F1FBB8 /* SnapKit in Frameworks */,
+				E8E428692BBFB73600F8B273 /* Inject in Frameworks */,
+				E8E4286C2BBFC60000F8B273 /* GRPC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				E89294F22AA97C36008D7ED9 /* ChessbicTests.swift */,
-				E89295142AAA9D74008D7ED9 /* ChessPieceTests.swift */,
 			);
 			path = ChessbicTests;
 			sourceTree = "<group>";
@@ -193,9 +192,7 @@
 		E89295112AAA8CE2008D7ED9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E869A2B42BB69B760033AACD /* ChessBoard.swift */,
-				E89295122AAA8D04008D7ED9 /* ChessPiece.swift */,
-				E89295162AAAA012008D7ED9 /* Square.swift */,
+				E869A2B42BB69B760033AACD /* Board.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,6 +202,7 @@
 			children = (
 				E89294DF2AA97C35008D7ED9 /* GameViewController.swift */,
 				E8E884232BB6838100F1FBB8 /* BoardView.swift */,
+				E8E428652BBFA22F00F8B273 /* Game.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -277,6 +275,8 @@
 			name = Chessbic;
 			packageProductDependencies = (
 				E8E884262BB6848500F1FBB8 /* SnapKit */,
+				E8E428682BBFB73600F8B273 /* Inject */,
+				E8E4286B2BBFC60000F8B273 /* GRPC */,
 			);
 			productName = Chessbic;
 			productReference = E89294D82AA97C35008D7ED9 /* Chessbic.app */;
@@ -352,6 +352,8 @@
 			mainGroup = E89294CF2AA97C35008D7ED9;
 			packageReferences = (
 				E8E884252BB6848500F1FBB8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				E8E428672BBFB73600F8B273 /* XCRemoteSwiftPackageReference "Inject" */,
+				E8E4286A2BBFC60000F8B273 /* XCRemoteSwiftPackageReference "grpc-swift" */,
 			);
 			productRefGroup = E89294D92AA97C35008D7ED9 /* Products */;
 			projectDirPath = "";
@@ -396,11 +398,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E892952B2AAD166E008D7ED9 /* AuthenticateView.swift in Sources */,
-				E89295172AAAA012008D7ED9 /* Square.swift in Sources */,
 				E8E884242BB6838100F1FBB8 /* BoardView.swift in Sources */,
 				E892951B2AAD00B7008D7ED9 /* MainTabViewController.swift in Sources */,
 				E869A2B82BB69BDE0033AACD /* UIView+Jiggle.swift in Sources */,
-				E869A2B52BB69B760033AACD /* ChessBoard.swift in Sources */,
+				E869A2B52BB69B760033AACD /* Board.swift in Sources */,
 				E892952E2AAD18AF008D7ED9 /* MenuViewController.swift in Sources */,
 				E89294E02AA97C35008D7ED9 /* GameViewController.swift in Sources */,
 				E89295212AAD0ED5008D7ED9 /* KeychainHelper.swift in Sources */,
@@ -408,8 +409,8 @@
 				E89294DC2AA97C35008D7ED9 /* AppDelegate.swift in Sources */,
 				E89295232AAD0F6B008D7ED9 /* AuthenticationService.swift in Sources */,
 				E89294DE2AA97C35008D7ED9 /* SceneDelegate.swift in Sources */,
-				E89295132AAA8D04008D7ED9 /* ChessPiece.swift in Sources */,
 				E892951E2AAD0622008D7ED9 /* AccountViewController.swift in Sources */,
+				E8E428662BBFA22F00F8B273 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,7 +419,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E89294F32AA97C36008D7ED9 /* ChessbicTests.swift in Sources */,
-				E89295152AAA9D74008D7ED9 /* ChessPieceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +596,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-Xlinker",
+					"-interposable",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chessbic.Chessbic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -749,6 +753,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E8E428672BBFB73600F8B273 /* XCRemoteSwiftPackageReference "Inject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzysztofzablocki/Inject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
+		E8E4286A2BBFC60000F8B273 /* XCRemoteSwiftPackageReference "grpc-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/grpc/grpc-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.22.0;
+			};
+		};
 		E8E884252BB6848500F1FBB8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -760,6 +780,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E8E428682BBFB73600F8B273 /* Inject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8E428672BBFB73600F8B273 /* XCRemoteSwiftPackageReference "Inject" */;
+			productName = Inject;
+		};
+		E8E4286B2BBFC60000F8B273 /* GRPC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8E4286A2BBFC60000F8B273 /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = GRPC;
+		};
 		E8E884262BB6848500F1FBB8 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E8E884252BB6848500F1FBB8 /* XCRemoteSwiftPackageReference "SnapKit" */;
