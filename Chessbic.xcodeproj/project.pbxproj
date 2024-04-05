@@ -84,6 +84,7 @@
 		E892952A2AAD166E008D7ED9 /* AuthenticateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateView.swift; sourceTree = "<group>"; };
 		E892952D2AAD18AF008D7ED9 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		E8E428652BBFA22F00F8B273 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		E8E428702BBFC7A800F8B273 /* app_tests.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = app_tests.yaml; path = .github/workflows/app_tests.yaml; sourceTree = "<group>"; };
 		E8E884232BB6838100F1FBB8 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +127,7 @@
 		E89294CF2AA97C35008D7ED9 = {
 			isa = PBXGroup;
 			children = (
+				E8E4286F2BBFC79900F8B273 /* Github */,
 				E89294DA2AA97C35008D7ED9 /* Chessbic */,
 				E89294F12AA97C36008D7ED9 /* ChessbicTests */,
 				E89294FB2AA97C36008D7ED9 /* ChessbicUITests */,
@@ -254,6 +256,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E8E4286F2BBFC79900F8B273 /* Github */ = {
+			isa = PBXGroup;
+			children = (
+				E8E428702BBFC7A800F8B273 /* app_tests.yaml */,
+			);
+			name = Github;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
