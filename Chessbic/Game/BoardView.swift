@@ -2,19 +2,19 @@
 //  BoardView.swift
 //  Chess
 //
-//  Created by Marcel Canhisares on 2024-03-29.
+//  Created by Marcel Canhisares on 2023-09-06.
 //
 
 import UIKit
 
-private extension ChessPiece {
+private extension Piece {
     var imageName: String {
-        return "\(pieceType.toImageName())_\(color.toImageName())"
+        return "\(type.rawValue)_\(color.rawValue)"
     }
 }
 
 protocol BoardViewDelegate: AnyObject {
-    func boardView(_ boardView: BoardView, didTap Square: Square)
+    func boardView(_ boardView: BoardView, didTap position: Position)
 }
 
 class BoardView: UIView {
@@ -28,23 +28,23 @@ class BoardView: UIView {
         didSet { updatePieces() }
     }
 
-    var selection: Square? {
+    var selection: Position? {
         didSet { updateSelection() }
     }
 
-    var moves: [Square] = [] {
+    var moves: [Position] = [] {
         didSet { updateMoveIndicators() }
     }
 
-    func jigglePiece(at Square: Square) {
-        if let piece = board.piece(at: Square) {
-            pieces[piece.toString()]?.jiggle()
+    func jigglePiece(at position: Position) {
+        if let piece = board.piece(at: position) {
+            pieces[piece.id]?.jiggle()
         }
     }
 
-    func pulsePiece(at Square: Square, completion: (() -> Void)?) {
-        if let piece = board.piece(at: Square) {
-            pieces[piece.toString()]?.pulse(completion: completion)
+    func pulsePiece(at position: Position, completion: (() -> Void)?) {
+        if let piece = board.piece(at: position) {
+            pieces[piece.id]?.pulse(completion: completion)
         }
     }
 
@@ -69,14 +69,16 @@ class BoardView: UIView {
             }
         }
 
-        for piece in board.pieces {
-            guard let piece = piece else {
-                continue
+        for row in board.pieces {
+            for piece in row {
+                guard let piece = piece else {
+                    continue
+                }
+                let view = UIImageView()
+                view.contentMode = .scaleAspectFit
+                pieces[piece.id] = view
+                addSubview(view)
             }
-            let view = UIImageView()
-            view.contentMode = .scaleAspectFit
-            pieces[piece.toString()] = view
-            addSubview(view)
         }
 
         for _ in 0 ..< 8 {
@@ -95,24 +97,26 @@ class BoardView: UIView {
     @objc private func didTap(_ gesture: UITapGestureRecognizer) {
         let size = squareSize
         let location = gesture.location(in: self)
-        let Square = Square(
-            file: Int(location.x / size.width),
-            rank: Int(location.y / size.height)
+        let position = Position(
+            x: Int(location.x / size.width),
+            y: Int(location.y / size.height)
         )
-        delegate?.boardView(self, didTap: Square)
+        delegate?.boardView(self, didTap: position)
     }
 
     private func updatePieces() {
         var usedIDs = Set<String>()
         let size = squareSize
-        for (i, piece) in board.pieces.enumerated() {
-            guard let piece = piece, let view = pieces[piece.toString()] else {
-                continue
+        for (i, row) in board.pieces.enumerated() {
+            for (j, piece) in row.enumerated() {
+                guard let piece = piece, let view = pieces[piece.id] else {
+                    continue
+                }
+                usedIDs.insert(piece.id)
+                view.image = UIImage(named: piece.imageName)
+                view.frame = frame(x: j, y: i, size: size)
+                view.layer.transform = CATransform3DMakeScale(0.8, 0.8, 0)
             }
-            usedIDs.insert(piece.toString())
-            view.image = UIImage(named: piece.imageName)
-            view.frame = frame(x: i % 8, y: i, size: size)
-            view.layer.transform = CATransform3DMakeScale(0.8, 0.8, 0)
         }
         for (id, view) in pieces where !usedIDs.contains(id) {
             view.alpha = 0
@@ -121,11 +125,13 @@ class BoardView: UIView {
     }
 
     private func updateSelection() {
-        for (i, piece) in board.pieces.enumerated() {
-            guard let piece = piece, let view = pieces[piece.toString()] else {
-                continue
+        for (i, row) in board.pieces.enumerated() {
+            for (j, piece) in row.enumerated() {
+                guard let piece = piece, let view = pieces[piece.id] else {
+                    continue
+                }
+                view.alpha = selection == Position(x: j, y: i) ? 0.5 : 1
             }
-            view.alpha = selection == Square(fromIndex: i) ? 0.5 : 1
         }
     }
 
@@ -133,12 +139,12 @@ class BoardView: UIView {
         let size = squareSize
         for i in 0 ..< 8 {
             for j in 0 ..< 8 {
-                let Square = Square(file: j, rank: i)
+                let position = Position(x: j, y: i)
                 let view = moveIndicators[i * 8 + j]
                 view.frame = frame(x: j, y: i, size: size)
                 view.layer.cornerRadius = size.width / 2
                 view.layer.transform = CATransform3DMakeScale(0.2, 0.2, 0)
-                view.alpha = moves.contains(Square) ? 0.5 : 0
+                view.alpha = moves.contains(position) ? 0.5 : 0
             }
         }
     }
